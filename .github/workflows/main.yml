@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: ${{ secrets.MY_EMAIL }}
+      - name: "21f1001681@ds.study.iitm.ac.in"
         run: echo "Hello, world!"
