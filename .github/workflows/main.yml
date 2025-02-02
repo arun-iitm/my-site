@@ -1,31 +1,14 @@
-name: GitHub Action for My Site
+name: GitHub Action with Email Address
 
 on:
   push:
     branches:
-      - main  # Trigger on push to the 'main' branch
+      - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: Run Tests
-        run: |
-          python -m unittest discover  # Replace with your testing framework, if applicable
-
-      - name: Use Secret Email Address
-        run: |
-          echo "The secret email is ${{ secrets.MY_EMAIL }}"
+      - name: ${{ secrets.MY_EMAIL }}
+        run: echo "Hello, world!"
